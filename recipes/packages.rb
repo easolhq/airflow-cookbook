@@ -64,6 +64,7 @@ dependencies_to_install.each do |value|
 end
 
 # Install Airflow
+ENV['SLUGIFY_USES_TEXT_UNIDECODE'] = 'yes'
 python_package node['airflow']['airflow_package'] do
   version node['airflow']['version']
 end
